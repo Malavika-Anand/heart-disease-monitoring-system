@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>result</title>
+    {% load static  %}
+    <link rel="stylesheet" href="{% static 'css/result.css' %}">
+  </head>
+  <body>
+    
+    
+    <div class="wrap">
+      <nav>
+        <ul>
+          <li><a class="active" href="{% url 'user_navbar'%}"> Home</a></li>
+          <li><a href="{%url 'user_input'%}"> heart analysis</a></li>
+
+          <li><a href="{%url 'user_view_doc'%}"> View Doctor</a></li>
+
+          <li><a href="{%url 'home'%}"> Log Out</a></li>
+        </ul>
+      </nav>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <h1><bold> THE RESULT  FOR HEART DISEASE PREDICTIONS</bold></h1>
+    
+      <h2>The result is</h2>
+    
+      
+      {% if ans == 1 %}
+      <h2>The patient has a heart problem</h2>
+      {% else %}
+      <h2>The patient does not have heart problem</h2>
+      {% endif %}
+      <section></section>
+     
+    </div>
+  
+   
+    
+    
+    
+  </body>
+</html>

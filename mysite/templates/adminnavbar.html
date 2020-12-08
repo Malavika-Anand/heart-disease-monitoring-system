@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ADMIN DETAILS</title>
+    {% load static  %}
+    <link rel="stylesheet" href="{% static 'css/admin_nav_bar.css' %}">
+  </head>
+  <body>
+    <div class="wrap">
+      <nav>
+        <ul>
+          <li><a class="active" href="{% url 'adminnavbar'%}"> Home</a></li>
+          <li><a href="{%url 'add_doc'%}"> Add Doctor</a></li>
+          <li><a href="{%url 'add_train_data'%}"> Add Training Data</a></li>
+          
+          <li><a href="{%url 'view_doc'%}"> View Doctor</a></li>
+          <li><a href="{%url 'view_train_data'%}"> View Training Data</a></li>
+          <li><a href="{%url 'home'%}"> Log Out</a></li>
+        </ul>
+      </nav>
+      <section></section>
+    </div>
+  </body>
+</html>

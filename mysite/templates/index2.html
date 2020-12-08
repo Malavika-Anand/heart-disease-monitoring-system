@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+    <head>
+    <title>USER DATA INPUT</title>
+    {% load static  %}
+    <link rel="stylesheet" href="{% static 'css/index2.css' %}">
+  </head>
+  <body>
+    <div class="wrap">
+      <nav>
+        <ul>
+          <li><a class="active" href="{%url 'user_navbar'%}"> Home</a></li>
+          <li><a href="{%url 'user_input'%}"> heart analysis</a></li>
+
+          <li><a href="{%url 'user_view_doc'%}"> View Doctor</a></li>
+          
+          <li><a href="{%url 'home'%}"> Log Out</a></li>
+        </ul>
+      </nav>
+      
+    </div>
+
+    
+
+
+  <div class="home"><h1>Check your Heart</h1></div>
+  <div class="main">
+    <form action="{%url 'result'%}" method="get">
+        <h2 class="name"> Type of Chest Pain</h2>
+        <select class="option" name="type of chest pain">
+        <option disabled="disabled" selected="selected">--choose option</option>
+            <option value="0"> atypical angina</option>
+            <option value="1"> typical angina</option>
+            <option value="2"> asymptomatic</option>
+            <option value="3"> nonanginal pain</option>
+        </select>
+        
+        <h2 class="name"> Resting Blood Pressure(94-200)</h2>
+        <input class="resting" type="text" name="resting">
+        
+         <h2 class="name"> Serum Cholesterol(120-564)</h2>
+        <input class="serum" type="text" name="serum">
+        
+         <h2 class="name"> Fasting Blood Sugar(>120mg)</h2>
+        <select class="option" name=" fasting blood sugar">
+            <option diabled="disabled" selected="selected">--choose option</option>
+                <option value="1"> True</option>
+                <option value="0"> False</option>
+            </select>
+        
+        <h2 class="name"> Resting Electro cardiographic Results</h2>
+        <select class="option" name=" resting electrocardiographic results">
+        <option diabled="disabled" selected="selected">--choose option</option>
+            <option value="0">Normal</option>
+            <option value="1"> having ST-T</option>
+            <option value="2"> hypertrophy</option>
+        </select>
+        <h2 class="name"> Maximum Heart Rate Achieved(71-202)</h2>
+        <input class="maximum" type="text" name="maximum">
+        
+        <h2 class="name"> Exercise-Induced Angina</h2>
+        <select class="option" name="exercise-induced angina">
+        <option diabled="disabled" selected="selected">--choose option</option>
+            <option value="1"> yes</option>
+            <option value="0"> no</option>
+        </select>
+        
+         <h2 class="name"> Old Peak=ST(0-6.2)</h2>
+        <input class="oldpeak" type="text" name="oldpeak">
+        
+        <h2 class="name"> Slope of the Peak Exercise ST Segment</h2>
+        <select class="option" name="slope of the peak exercise ST segment">
+        <option diabled="disabled" selected="selected">--choose option</option>
+            <option value="0"> up sloping</option>
+            <option value="1"> flat</option>
+            <option value="2"> down sloping</option>
+        </select>
+        
+         <h2 class="name"> Number of Major Vessels(0-3) colored by Fluoroscopy</h2>
+        <input class="fluoroscopy" type="text" name="fluoroscopy">
+        
+        <h2 class="name"> Thallium Scan</h2>
+        <select class="option" name="thallium scan">
+        <option diabled="disabled" selected="selected">--choose option</option>
+            <option value="3"> normal</option>
+            <option value="6"> fixed defect</option>
+            <option value="7"> reversible defect</option>
+        </select>
+        
+       
+        <button type="submit"> Submit</button>
+        </form>
+    </div>
+    </body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>VIEW TRAINING DATA</title>
+    {% load static  %}
+    <link rel="stylesheet" href="{% static 'css/view_training_data.css' %}">
+    <link rel="stylesheet" href="{%static 'css/mytable.css' %}">
+
+  </head>
+
+
+<body>
+  <div class="wrap">
+    <nav>
+      <ul>
+        <li><a class="active" href="{%url 'adminnavbar'%}"> Home</a></li>
+        <li><a href="{%url 'add_doc'%}"> Add Doctor</a></li>
+        <li><a href="{%url 'add_train_data'%}"> Add Training Data</a></li>
+        
+        <li><a href="{%url 'view_doc'%}"> View Doctor</a></li>
+        <li><a href="{%url 'view_train_data'%}"> View Training Data</a></li>
+        <li><a href="{%url 'home'%}"> Log Out</a></li>
+      </ul>
+    </nav>
+    <table class="mytable">
+      <thead>
+        <tr>
+          <th>Disease Name</th>
+          <th>Chest Pain</th>
+          <th>Blood Pressure</th>
+          <th>Cholestrol Level</th>
+          <th>Fasting Blood Sugar(>120mg)</th>
+          <th>Resting Electro cardiographic Results</th>
+          <th>Maximum Heart Rate Achieved(71-202)</th>
+          <th>Exercise-Induced Angina</th>
+          <th>Old Peak=ST(0-6.2)</th>
+          <th>Number of Major Vessels(0-3) colored by Fluoroscopy</th>
+          <th>Thallium Scan</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for data in userdata %}
+          <tr>
+            <td>{{data.name}}</td>
+            <td>{{ data.get_cp_display }}</td>
+            <td>{{ data.testbps }}</td>
+            <td>{{ data.chol }}</td>
+            <td>{{data.get_fbs_display}}</td>
+            <td>{{data.restecg}}</td>
+            <td>{{data.thalch}}</td>
+            <td>{{data.get_exang_display}}</td>
+            <td>{{data.oldpeak}}</td>
+            <td>{{data.get_oldpeak_display}}</td>
+            <td>{{data.ca}}</td>
+            <td>{{data.get_thal_display}}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+   
+  </div>
+  </body>
+</html>

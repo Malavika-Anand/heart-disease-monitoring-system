@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+    <head>
+    <title>ADD DOCTOR</title>
+    {% load static  %}
+    <link rel="stylesheet" href="{% static 'css/add_doc.css' %}">
+  </head>
+  
+    
+    <body>
+        <div class="wrap">
+          <nav>
+            <ul>
+              <li><a class="active" href="{%url 'adminnavbar'%}"> Home</a></li>
+              <li><a href="{% url 'add_doc'%}"> Add Doctor</a></li>
+              <li><a href="{%url 'add_train_data'%}"> Add Training Data</a></li>
+              
+              <li><a href="{%url 'view_doc'%}"> View Doctor</a></li>
+              <li><a href="{%url 'view_train_data'%}"> View Training Data</a></li>
+              <li><a href="{%url 'home'%}"> Log Out</a></li>
+            </ul>
+          </nav>
+          
+        </div>
+            
+    
+
+  <div class="home"><h1>Add Doctor</h1></div>
+  <div class="main">
+    <form method="POST">
+      {% csrf_token %}
+        <div id="name">
+        <h2 class="name">Name</h2>
+        <input class="fname" type="text" name="name" required>
+        </div>
+        <h2 class="name">Hospital Address</h2>
+        <input class="address" type="text" name="address" required>
+        
+        <h2 class="name"> Mobile No.</h2>
+        <input class="mobile" type="number" name="phoneNo" required>
+        
+         <h2 class="name"> Email id</h2>
+        <input class="email" type="text" name="email" required>
+        
+         <h2 class="name"> Doctor's Age</h2>
+        <input class="age" type="number" name="age" required>
+        
+        <h2 id="person">Sex</h2>
+        <select class="option" name="sex" required>
+         <option disabled="disabled" value"" selected="selected">--choose option</option>
+         <option value="0">Female</option>
+         <option value="1">Male</option>
+       </select>
+        
+        <h2 class="name"> Speciality In</h2>
+        <input class="speciality" type="text" name="speciality" required>
+       
+        <button type="submit"> Submit</button>
+        </form>
+    </div>
+    </body>
+</html>

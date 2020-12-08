@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>VIEW DOCTOR</title>
+    {% load static  %}
+    <link rel="stylesheet" href="{% static 'css/view_doc.css' %}">
+    <link rel="stylesheet" href="{%static 'css/mytable.css' %}">
+
+  </head>
+
+
+<body>
+    <div class="wrap">
+      <nav>
+        <ul>
+          <li><a class="active" href="{%url 'adminnavbar'%}"> Home</a></li>
+          <li><a href="{%url 'add_doc'%}"> Add Doctor</a></li>
+          <li><a href="{%url 'add_train_data'%}"> Add Training Data</a></li>
+        
+          <li><a href="{%url 'view_doc'%}"> View Doctor</a></li>
+          <li><a href="{%url 'view_train_data'%}"> View Training Data</a></li>
+          <li><a href="{%url 'home'%}"> Log Out</a></li>
+        </ul>
+      </nav>
+      <table class="mytable">
+        <thead>
+          <tr>
+            <th>DOCTOR NAME</th>
+            <th>HOSPITAL ADDRESS</th>
+            <th>MOBILE NO.</th>
+            <th>EMAIL ID</th>
+            <th>AGE</th>
+            <th>GENDER</th>
+            <th>SPECIALITY OF THE DOCTOR</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          {% for data in adminViewDoc %}
+            <tr>
+              <td>{{data.name}}</td>
+              <td>{{data.address}}</td>
+              <td>{{data.phoneNo}}</td>
+              <td>{{data.email}}</td>
+              <td>{{data.age}}</td>
+              <td>{{data.get_sex_display}}</td>
+              <td>{{data.speciality}}</td>
+             </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    </body>
+</html>
+ 

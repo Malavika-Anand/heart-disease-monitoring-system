@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>USER DETAILS</title>
+    {% load static  %}
+    <link rel="stylesheet" href="{% static 'css/user_navbar.css' %}">
+  </head>
+  <body>
+    <div class="wrap">
+      <nav>
+        <ul>
+          <li><a class="active" href="{% url 'user_navbar'%}"> Home</a></li>
+          <li><a href="{%url 'user_input'%}"> heart analysis</a></li>
+
+          <li><a href="{%url 'user_view_doc'%}"> View Doctor</a></li>
+
+          <li><a href="{%url 'home'%}"> Log Out</a></li>
+        </ul>
+      </nav>
+      <section></section>
+    </div>
+  </body>
+</html>
